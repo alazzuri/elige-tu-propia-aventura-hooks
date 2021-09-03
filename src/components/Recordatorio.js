@@ -22,13 +22,3 @@ JSX:
 */
 
 // ESCRIBE TU COMPONENTE A COTNINUACION (NO TE OLVIDES DE EXPORTARLO!!)
-
-const Recordatorio = (props) => (
-  <div className="recordatorio">
-    <h3>Selección anterior: {props.seleccionPrevia}</h3>
-    <h4>Historial de opciones elegidas: </h4>
-    <ul>{props.historial}</ul>
-  </div>
-);
-
-export default Recordatorio;

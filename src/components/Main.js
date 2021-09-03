@@ -1,5 +1,5 @@
 import data from "./data";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Opciones from "./Opciones";
 import Recordatorio from "./Recordatorio";
 
@@ -37,55 +37,26 @@ const Main = () => {
   // si fuera un contador.
   // Si tan solo tuviéramos un hook que nos permita almacenar esta información y actualizarla
   // en el futuro... 👀
-  const [counter, setCounter] = useState(0);
-
+  // ESCRIBE TU CODIGO AQUI
   // De igual manera, tenemos que almacenar la selección previa del usuario para mostrarla en la
   // pantalla. Este dato, también se irá actualizando de tiempo en tiempo, como el contador...
-  const [prevSelected, setPrevSelected] = useState("");
-
+  // ESCRIBE TU CODIGO AQUI
   // Finalmente, debemos almacenar el historial de selecciones, como una lista que iremos acualizando
   // con cada nueva selección...
-  const [history, setHistory] = useState([]);
-
+  // ESCRIBE TU CODIGO AQUI
   // Ahora que ya tenemos la manera de almacenar y actualizar la información, debemos crear
   // una función "handleClick" que se ejecute cuando se elige una opción.
   // Dicha función, deberá navegar entre las distintas opciones de historia, en base
   // a la opción que elija la persona. Además, deberá validarse el caso de que
   // la historia llegue a su fin, para informar tal situación en la pantalla.
-  const handleClick = (e) => {
-    const id = e.target.id;
-    if (counter >= 7) {
-      alert("Fin.");
-    } else if (id === "A" && prevSelected !== "A") {
-      setCounter((prevCount) => prevCount + 1);
-      setPrevSelected("A");
-    } else if (id === "A" && prevSelected === "A") {
-      setCounter((prevCount) => prevCount + 2);
-    } else if (id === "B" && prevSelected === "A") {
-      setCounter((prevCount) => prevCount + 3);
-      setPrevSelected("B");
-    } else if (id === "B") {
-      setCounter((prevCount) => prevCount + 3);
-      setPrevSelected("B");
-    }
-  };
-
+  // ESCRIBE TU CODIGO AQUI
   // Una vez que tenemos la función que se invocará al elegir una de las opciones,
   // debemos encargarnos de almacenar dicha selección en el historial. Podemos pensar
   // esto como un "efecto" que se dispara cada vez que la persona elije una nueva opción,
   // mediante el cual agregamos el item seleccionado a la lista del historial.
-
-  useEffect(() => {
-    if (!prevSelected) return;
-
-    const newHistory = [...history, prevSelected];
-
-    setHistory(newHistory);
-  }, [prevSelected]);
-
+  // ESCRIBE TU CODIGO AQUI
   // Aquí te dejamos la estructura del JSX que retornará nuestro componente, para
   // que puedas tener como referencia:
-
   /*
   return (
     <div className="layout">
@@ -102,23 +73,7 @@ const Main = () => {
     </div>
   );
   */
-
-  return (
-    <div className="layout">
-      <h1 className="historia">{data[counter].historia}</h1>
-      <Opciones
-        handleClick={handleClick}
-        opcionA={data[counter].opciones.a}
-        opcionB={data[counter].opciones.b}
-      />
-      <Recordatorio
-        seleccionPrevia={prevSelected}
-        historial={history.map((e, index) => (
-          <li key={index}>{e}</li>
-        ))}
-      />
-    </div>
-  );
+  // ESCRIBE TU CODIGO AQUI
 };
 
 export default Main;

@@ -31,22 +31,3 @@ JSX:
 */
 
 // ESCRIBE TU COMPONENTE A COTNINUACION (NO TE OLVIDES DE EXPORTARLO!!)
-
-const Opciones = (props) => (
-  <div className="opciones">
-    <div className="opcion">
-      <button id="A" className="botones" onClick={props.handleClick}>
-        A
-      </button>
-      <h2>{props.opcionA}</h2>
-    </div>
-    <div className="opcion">
-      <button id="B" className="botones" onClick={props.handleClick}>
-        B
-      </button>
-      <h2>{props.opcionB}</h2>
-    </div>
-  </div>
-);
-
-export default Opciones;
